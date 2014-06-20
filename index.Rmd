@@ -1,0 +1,94 @@
+---
+title       :  Basic Investment Strategy on Shiny
+subtitle    : 
+author      : c-spohrer
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## A Basic Investment Strategy 
+
+A very traditional investment strategy divides your investments between stocks and bonds. This has the following benefits.
+
+
+  1. Reduces volatitilty.
+  2. Reduces maximum drawdown.
+  3. However at the expense of lagging behind during bull markets. 
+
+--- .class #id 
+
+## S&P500 SPY Exchange Traded Fund
+
+Monthly and annualized returns for the SPY ETF
+
+```{r, echo=FALSE, comment=NA, message=FALSE}
+
+require(quantmod)
+require(PerformanceAnalytics)
+getSymbols(c("SPY","BND"))
+spy <- SPY$SPY.Adjusted
+spy<- spy["2008::",]
+colnames(spy)<- c("spy")
+spym <- monthlyReturn(spy)
+colnames(spym)<- c("SPY")
+
+bnd <- BND$BND.Adjusted
+bnd<- bnd["2008::",]
+colnames(bnd)<- c("bnd")
+bndm <- monthlyReturn(bnd)
+colnames(bndm)<- c("BND")
+
+table.CalendarReturns(spym)
+```
+
+
+--- .class #id 
+
+## Vanguard Bond Index BND Exchange Traded Fund
+
+Monthly and annualized returns for the BND ETF
+
+```{r, echo=FALSE, comment=NA}
+table.CalendarReturns(bndm)
+```
+
+
+--- .class #id 
+
+## Monthly and annualized returns for a mix of SPY and BND ETF's
+
+Here is the results of allocating 60% to the SPY etf, and 40% to the BND ETF, and rebalancing monthly.
+
+```{r, echo=FALSE, comment=NA}
+   
+         wt <- 60 / 100
+         myReturns <- wt * spym$SPY + ( 1 - wt ) * bndm$BND
+        colnames(myReturns) <- c("annualized")
+        
+
+table.CalendarReturns(myReturns)
+
+```
+
+
+--- .class #id 
+
+## Interactive Shiny App
+
+
+If you would like to play around with tweaking the percentage allocated to each fund, there is a Shiny app at:
+
+http://spohrer.shinyapps.io/code
+
+All you need to do is adjust the slider control to set the allocation to the SPY ETF between 0 and 100%, and see how the cumulative return varies over time, from Jan1, 2008, to June 19, 2014.
+
+Have fun.
+
+--- .class #id
+
+

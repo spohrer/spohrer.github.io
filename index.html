@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Investment Strategy on Shiny</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Basic Investment Strategy on Shiny">
+  <meta name="author" content="c-spohrer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Basic Investment Strategy on Shiny</h1>
+    <h2></h2>
+    <p>c-spohrer<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>A Basic Investment Strategy</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A very traditional investment strategy divides your investments between stocks and bonds. This has the following benefits.</p>
+
+<ol>
+<li>Reduces volatitilty.</li>
+<li>Reduces maximum drawdown.</li>
+<li>However at the expense of lagging behind during bull markets. </li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>S&amp;P500 SPY Exchange Traded Fund</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Monthly and annualized returns for the SPY ETF</p>
+
+<pre><code>[1] &quot;SPY&quot; &quot;BND&quot;
+</code></pre>
+
+<pre><code>      Jan   Feb  Mar  Apr  May  Jun  Jul  Aug  Sep   Oct  Nov Dec   SPY
+2008 -5.2  -2.6 -0.9  4.8  1.5 -8.4 -0.9  1.5 -9.4 -16.5 -7.0 1.0 -36.2
+2009 -8.2 -10.7  8.3  9.9  5.8 -0.1  7.5  3.7  3.5  -1.9  6.2 1.9  26.3
+2010 -3.6   3.1  6.1  1.6 -7.9 -5.2  6.8 -4.5  9.0   3.8  0.0 6.7  15.1
+2011  2.3   3.5  0.0  2.9 -1.1 -1.7 -2.0 -5.5 -6.9  10.9 -0.4 1.0   1.9
+2012  4.6   4.3  3.2 -0.7 -6.0  4.1  1.2  2.5  2.5  -1.8  0.6 0.9  16.0
+2013  5.1   1.3  3.8  1.9  2.4 -1.3  5.2 -3.0  3.2   4.6  3.0 2.6  32.3
+2014 -3.5   4.5  0.8  0.7  2.3  2.0   NA   NA   NA    NA   NA  NA   6.9
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Vanguard Bond Index BND Exchange Traded Fund</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Monthly and annualized returns for the BND ETF</p>
+
+<pre><code>      Jan  Feb  Mar  Apr  May  Jun Jul  Aug  Sep  Oct  Nov  Dec
+2008  1.3  0.1  0.4 -0.3 -1.0  0.0 0.0  0.8 -0.5 -2.9  3.9  5.2
+2009 -2.1 -0.6  1.1  0.5  0.7  0.6 1.3  1.0  1.0  0.3  1.3 -1.5
+2010  1.3  0.3 -0.2  1.1  1.1  1.4 0.9  1.6  0.0  0.3 -0.7 -1.0
+2011  0.1  0.3 -0.2  1.5  1.2 -0.4 1.6  1.6  0.7  0.1 -0.1  1.2
+2012  0.6  0.0 -0.5  1.1  0.9  0.1 1.2  0.2  0.2 -0.1  0.1 -0.9
+2013 -0.7  0.5  0.1  1.0 -1.9 -1.6 0.4 -0.9  1.1  0.9 -0.3 -0.6
+2014  1.6  0.5 -0.2  0.8  1.1 -0.5  NA   NA   NA   NA   NA   NA
+     monthly.returns
+2008             6.9
+2009             3.6
+2010             6.2
+2011             7.9
+2012             3.0
+2013            -2.1
+2014             3.3
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Monthly and annualized returns for a mix of SPY and BND ETF&#39;s</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here is the results of allocating 60% to the SPY etf, and 40% to the BND ETF, and rebalancing monthly.</p>
+
+<pre><code>      Jan  Feb  Mar Apr  May  Jun  Jul  Aug  Sep   Oct  Nov Dec annualized
+2008 -2.6 -1.5 -0.4 2.7  0.5 -5.0 -0.5  1.3 -5.9 -11.1 -2.6 2.7      -21.0
+2009 -5.8 -6.7  5.4 6.1  3.8  0.2  5.0  2.6  2.5  -1.0  4.2 0.6       17.3
+2010 -1.7  2.0  3.6 1.4 -4.3 -2.5  4.4 -2.1  5.4   2.4 -0.3 3.6       12.0
+2011  1.4  2.2 -0.1 2.3 -0.2 -1.2 -0.5 -2.6 -3.9   6.6 -0.3 1.1        4.6
+2012  3.0  2.6  1.7 0.0 -3.2  2.5  1.2  1.6  1.6  -1.1  0.4 0.2       10.8
+2013  2.8  1.0  2.3 1.6  0.6 -1.5  3.3 -2.1  2.3   3.1  1.7 1.3       17.5
+2014 -1.5  2.9  0.4 0.7  1.8  1.0   NA   NA   NA    NA   NA  NA        5.5
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Interactive Shiny App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If you would like to play around with tweaking the percentage allocated to each fund, there is a Shiny app at:</p>
+
+<p><a href="http://spohrer.shinyapps.io/code">http://spohrer.shinyapps.io/code</a></p>
+
+<p>All you need to do is adjust the slider control to set the allocation to the SPY ETF between 0 and 100%, and see how the cumulative return varies over time, from Jan1, 2008, to June 19, 2014.</p>
+
+<p>Have fun.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='A Basic Investment Strategy'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='S&amp;P500 SPY Exchange Traded Fund'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Vanguard Bond Index BND Exchange Traded Fund'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Monthly and annualized returns for a mix of SPY and BND ETF&#39;s'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Interactive Shiny App'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
